@@ -19,12 +19,21 @@ monthly_challenges = {
 
 
 # Create your views here.
+def index(request):
+    response_data = 'None'
+    for month in monthly_challenges.keys():
+        response_data += f"<li><a href='{reverse('month-challenge', args=[month])}'>{month.capitalize()}<a/></li>"
+        
+    response_data = f"<ul>{response_data}</ul>"
+    return HttpResponse(response_data)
+
 def monthly_challenge(request, month: str):
     if month not in monthly_challenges.keys():
         return HttpResponseNotFound("Invalid month")
     
     challenge_text = monthly_challenges[month]
-    return HttpResponse(challenge_text)
+    response_data = f"<h1>{challenge_text}</h1>"
+    return HttpResponse(response_data)
 
 def monthly_challenge_by_number(request, month):
     months = list(monthly_challenges.keys())
