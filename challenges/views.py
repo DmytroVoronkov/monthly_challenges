@@ -27,7 +27,10 @@ def index(request):
         response_data += f"<li><a href='{reverse('month-challenge', args=[month])}'>{month.capitalize()}<a/></li>"
         
     response_data = f"<ul>{response_data}</ul>"
-    return HttpResponse(response_data)
+    # return HttpResponse(response_data)
+    return render(request, 'challenges/index.html', {
+        'months': list(monthly_challenges.keys())
+    })
 
 def monthly_challenge(request, month: str):
     try:
