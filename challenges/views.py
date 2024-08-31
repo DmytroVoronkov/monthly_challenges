@@ -16,7 +16,8 @@ monthly_challenges = {
     'september': 'Rem reprehenderit adipisci doloremque est quibusdam repellat iure.',
     'october': 'Reprehenderit totam sunt quam inventore ut minima aut.',
     'november': 'Et dignissimos velit ipsum quia.',
-    'december': 'Numquam molestiae sed.'
+    # 'december': 'Numquam molestiae sed.'
+    'december': None
 }
 
 
