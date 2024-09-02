@@ -3,11 +3,10 @@
 {% block page_title %}All Challenges Available{% endblock page_title %}
 
 {% block content %}
-<body>
+{% include 'challenges/includes/header.html' %}
   <ul>
     {% for month in months %}
     <li><a href="{% url 'month-challenge' month %}">{{ month|title }}</a></li>
     {% endfor %}
   </ul>
-</body>
 {% endblock content %}
