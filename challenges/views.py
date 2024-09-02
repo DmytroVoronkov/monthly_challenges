@@ -41,7 +41,7 @@ def monthly_challenge(request, month: str):
             'text': challenge_text
         })
     except:
-        raise Http404("404")
+        raise Http404()
 
 def monthly_challenge_by_number(request, month):
     months = list(monthly_challenges.keys())
